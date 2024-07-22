@@ -19,8 +19,6 @@ function OrderItem({ item }) {
 
 OrderItem.propTypes = {
   item: PropTypes.object.isRequired,
-  isLoadingIngredients: PropTypes.bool.isRequired,
-  ingredients: PropTypes.array.isRequired,
 };
 
 export default OrderItem;
