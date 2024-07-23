@@ -2,7 +2,7 @@ import { formatCurrency } from '../../utils/helpers';
 
 import PropTypes from 'prop-types';
 
-function OrderItem({ item }) {
+function OrderItem({ item, ingredients }) {
   const { quantity, name, totalPrice } = item;
 
   return (
@@ -13,12 +13,16 @@ function OrderItem({ item }) {
         </p>
         <p className="font-bold">{formatCurrency(totalPrice)}</p>
       </div>
+      <p className="text-sm capitalize italic text-stone-500">
+        {ingredients.join(',') ?? []}
+      </p>
     </li>
   );
 }
 
 OrderItem.propTypes = {
   item: PropTypes.object.isRequired,
+  ingredients: PropTypes.array.isRequired,
 };
 
 export default OrderItem;
